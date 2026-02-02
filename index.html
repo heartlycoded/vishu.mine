@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Vishu ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+
+body{
+  min-height:100vh;
+  background:linear-gradient(135deg,#ff7abf,#ff4f9a,#7a4df5);
+  overflow-x:hidden;
+  overflow-y:auto;
+  padding:30px 14px;
+}
+
+/* PAGE */
+.page{
+  display:flex;
+  justify-content:center;
+  margin-bottom:30px;
+}
+.hidden{display:none}
+
+/* CARD */
+.card{
+  width:100%;
+  max-width:520px;
+  background:#fff;
+  border-radius:32px;
+  padding:28px 24px 34px;
+  box-shadow:0 40px 90px rgba(0,0,0,.35);
+  position:relative;
+  animation:fadeUp .5s ease;
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(25px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* BACK */
+.back{
+  position:absolute;
+  top:16px;
+  left:18px;
+  font-size:14px;
+  font-weight:700;
+  color:#7e1c4e;
+  cursor:pointer;
+}
+
+/* STICKERS */
+.sticker{
+  position:fixed;
+  width:145px;
+  z-index:1;
+  animation:float 5s ease-in-out infinite alternate;
+  pointer-events:none;
+}
+@keyframes float{
+  from{transform:translateY(0)}
+  to{transform:translateY(-18px)}
+}
+
+/* FRAME */
+.frame{
+  margin:0 auto 20px;
+  border-radius:24px;
+  border:6px solid #ff6fae;
+  box-shadow:0 0 30px rgba(255,111,174,.9);
+  overflow:hidden;
+}
+.frame img{width:100%;display:block}
+
+/* CIRCLE IMAGE */
+.circle{
+  width:230px;
+  height:230px;
+  border-radius:70%;
+  border:6px solid #ff6fae;
+  box-shadow:0 0 28px rgba(255,111,174,.9);
+  overflow:hidden;
+  margin:0 auto 18px;
+}
+.circle img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* GLOW */
+.glow{
+  animation:glow 2s infinite alternate;
+}
+@keyframes glow{
+  from{box-shadow:0 0 25px rgba(255,111,174,.6)}
+  to{box-shadow:0 0 45px rgba(255,111,174,1)}
+}
+
+/* TEXT */
+h1{
+  text-align:center;
+  font-size:26px;
+  font-weight:800;
+  color:#7e1c4e;
+}
+.sub{
+  text-align:center;
+  margin:14px 0 24px;
+  color:#444;
+}
+
+/* BUTTONS */
+.buttons{position:relative;height:90px}
+button{
+  position:absolute;
+  padding:16px 34px;
+  border:none;
+  border-radius:40px;
+  font-size:17px;
+  font-weight:700;
+  cursor:pointer;
+  transition:.25s;
+}
+#yes{
+  left:16px;
+  background:linear-gradient(135deg,#ff2f92,#ff6fcf);
+  color:#fff;
+  box-shadow:0 0 30px rgba(255,111,207,.9);
+}
+#yes:hover{transform:scale(1.1)}
+#yes:disabled{
+  opacity:0.4;
+  pointer-events:none;
+}
+#no{
+  right:16px;
+  background:#ddd;
+}
+
+/* GIFTS */
+.gifts{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+.gift{
+  background:#ffe3f1;
+  padding:20px;
+  border-radius:20px;
+  text-align:center;
+  font-weight:700;
+  cursor:pointer;
+  transition:.3s;
+}
+.gift:hover{transform:scale(1.06)}
+
+/* QUIZ */
+.quiz input{
+  width:100%;
+  padding:14px;
+  border-radius:14px;
+  border:2px solid #ff9acb;
+  margin-bottom:14px;
+  font-size:15px;
+}
+.quiz button{
+  position:static;
+  width:100%;
+  margin-top:10px;
+  background:#ff5fa2;
+  color:#fff;
+}
+
+/* FLOWERS */
+.flower{
+  position:fixed;
+  top:-30px;
+  font-size:26px;
+  animation:fall linear forwards;
+  pointer-events:none;
+}
+@keyframes fall{
+  to{transform:translateY(110vh) rotate(360deg);opacity:0}
+}
+
+/* ===== LOCK OVERLAY ===== */
+#lockOverlay{
+  position:fixed;
+  inset:0;
+  background:rgba(255,180,215,0.5);
+  backdrop-filter:blur(12px);
+  z-index:999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+#lockCard{
+  background:linear-gradient(135deg,#fff0f7,#f3e9ff);
+  padding:26px 30px;
+  border-radius:28px;
+  text-align:center;
+  box-shadow:0 30px 70px rgba(0,0,0,0.25);
+  max-width:320px;
+}
+
+.clock{
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  border:6px solid #ff6fae;
+  box-shadow:0 0 30px rgba(255,111,174,0.9);
+  overflow:hidden;
+  margin:0 auto 14px;
+}
+.clock img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+#countTitle{
+  font-size:15px;
+  font-weight:700;
+  color:#7e1c4e;
+  margin-bottom:6px;
+}
+#countdown{
+  font-size:22px;
+  font-weight:900;
+  color:#ff2f92;
+  margin-bottom:10px;
+}
+.lockMsg{
+  font-size:14px;
+  color:#555;
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOCK OVERLAY -->
+<div id="lockOverlay">
+  <div id="lockCard">
+    <div class="clock">
+      <img src="teddy(2).jpg">
+    </div>
+    <div id="countTitle">⏳ Unlocks In</div>
+    <div id="countdown"></div>
+    <div class="lockMsg">
+      Come back later my love…<br>
+      I promise it’ll be worth the wait 💕
+    </div>
+  </div>
+</div>
+
+<!-- STICKERS -->
+<img src="st1.png" class="sticker" style="top:0.1;left:0">
+<img src="st2.png" class="sticker" style="top:0.1;right:0">
+<img src="st3.png" class="sticker" style="bottom:0;left:0">
+<img src="st4.png" class="sticker" style="bottom:0;right:0">
+
+<audio id="music" src="song.mp3" loop></audio>
+
+<!-- PAGE 1 -->
+<div class="page" id="p1wrap">
+<div class="card">
+
+<div class="circle glow"><img src="teddy.png"></div>
+
+<h1>Dear Vishu,<br>Will you be my Valentine?</h1>
+<div class="sub">Choose wisely… you get only one chance 😌</div>
+
+<div class="buttons">
+  <button id="yes">YES, FOR SURE ❤️🥰</button>
+  <button id="no">NO NEVER! 💔😭</button>
+</div>
+
+</div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page hidden" id="p2wrap">
+<div class="card">
+
+<div class="back" onclick="go(1)">⬅ Back</div>
+
+<h1>Ahhh… you chose wisely 🥹❤️</h1>
+<div class="sub">And I couldn’t be happier</div>
+
+<div class="gifts">
+  <div class="gift" onclick="go(3)">Gift 1 ❤️</div>
+  <div class="gift" onclick="go(4)">Gift 2 ❤️</div>
+  <div class="gift" onclick="goQuiz()">Gift 3 ❤️</div>
+</div>
+
+</div>
+</div>
+
+<!-- GIFT 1 -->
+<div class="page hidden" id="p3wrap">
+<div class="card">
+
+<div class="back" onclick="go(2)">⬅ Back</div>
+<h1>Flowers, for the one who makes my life bloom🌹</h1>
+<div class="frame glow"><img src="bouquet.png" style="width:90%;margin:auto"></div>
+
+</div>
+</div>
+
+<!-- GIFT 2 -->
+<div class="page hidden" id="p4wrap">
+<div class="card">
+
+<div class="back" onclick="go(2)">⬅ Back</div>
+<h1>Words from my heart ✨</h1>
+<div class="frame glow"><img src="letter.png"></div>
+
+</div>
+</div>
+
+<!-- QUIZ -->
+<div class="page hidden" id="quizwrap">
+<div class="card quiz">
+
+<div class="back" onclick="go(2)">⬅ Back</div>
+<h1>One tiny test 😌</h1>
+
+<input id="q1" placeholder="Date we met in person for the first time? (dd/mm/yyyy)">
+<input id="q2" placeholder="City we met in for the first time? (CAPS)">
+
+<button onclick="checkQuiz()">Submit 💕</button>
+
+</div>
+</div>
+
+<!-- GIFT 3 -->
+<div class="page hidden" id="p5wrap">
+<div class="card">
+
+<div class="back" onclick="go(2)">⬅ Back</div>
+<h1>The real surprise 🥹❤️</h1>
+<div class="frame glow"><img src="couple.jpg"></div>
+
+<div class="sub">
+I’ll hand it to you when we meet…<br>
+wait until then babe 😘
+</div>
+
+</div>
+</div>
+
+<script>
+const music=document.getElementById("music");
+const yes=document.getElementById("yes");
+let scale=1;
+
+/* NO BUTTON */
+no.onmouseenter=()=>{
+  scale-=0.15;
+  if(scale<0.25)scale=0.25;
+  no.style.transform=`translate(${Math.random()*220-110}px,${Math.random()*140-70}px) scale(${scale})`;
+};
+
+/* YES BUTTON */
+yes.onclick=()=>{
+  p1wrap.classList.add("hidden");
+  p2wrap.classList.remove("hidden");
+  music.play();
+  flowers();
+};
+
+/* NAVIGATION */
+function hideAll(){
+  ["p1wrap","p2wrap","p3wrap","p4wrap","quizwrap","p5wrap"].forEach(id=>{
+    document.getElementById(id).classList.add("hidden");
+  });
+}
+function go(n){
+  hideAll();
+  document.getElementById("p"+n+"wrap").classList.remove("hidden");
+}
+function goQuiz(){
+  hideAll();
+  quizwrap.classList.remove("hidden");
+}
+function checkQuiz(){
+  if(q1.value==="17/05/2025" && q2.value==="HARIDWAR"){
+    hideAll();
+    p5wrap.classList.remove("hidden");
+  }else alert("Hehe 😌 try again");
+}
+
+/* FLOWERS */
+function flowers(){
+  setInterval(()=>{
+    const f=document.createElement("div");
+    f.className="flower";
+    f.innerHTML="🌸";
+    f.style.left=Math.random()*100+"vw";
+    f.style.animationDuration=(Math.random()*2+3)+"s";
+    document.body.appendChild(f);
+    setTimeout(()=>f.remove(),5000);
+  },160);
+}
+
+/* ===== IST TIMER LOCK ===== */
+const countdownEl=document.getElementById("countdown");
+const unlockTime=new Date(Date.UTC(2026,1,13,18,30)); // 14 Feb 2026 00:01 IST
+yes.disabled=true;
+
+function updateCountdown(){
+  const diff=unlockTime-new Date();
+  if(diff<=0){
+    document.getElementById("lockOverlay").style.display="none";
+    yes.disabled=false;
+    return;
+  }
+  const d=Math.floor(diff/(1000*60*60*24));
+  const h=Math.floor((diff/(1000*60*60))%24);
+  const m=Math.floor((diff/(1000*60))%60);
+  const s=Math.floor((diff/1000)%60);
+  countdownEl.innerHTML=`${d}d ${h}h ${m}m ${s}s`;
+}
+setInterval(updateCountdown,1000);
+updateCountdown();
+</script>
+
+</body>
+</html>
